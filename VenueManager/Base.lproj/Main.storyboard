@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6198" systemVersion="14A297b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10089" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6198"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10089"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -641,12 +643,12 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="VenueManager" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--Window Controller - Window-->
+        <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
@@ -657,25 +659,210 @@
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="YZS-Tc-AcA"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
+        <!--Test View Controller-->
+        <scene sceneID="fkl-Uv-dYG">
+            <objects>
+                <viewController id="Lh5-Bo-Ia5" customClass="TestViewController" customModule="VenueManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="g7C-ni-Yqi">
+                        <rect key="frame" x="0.0" y="0.0" width="583" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nqJ-l0-QZu" customClass="VenueView" customModule="VenueManager" customModuleProvider="target">
+                                <rect key="frame" x="20" y="20" width="428" height="260"/>
+                            </customView>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pA6-xo-2zf">
+                                <rect key="frame" x="485" y="264" width="59" height="18"/>
+                                <buttonCell key="cell" type="check" title="layout" bezelStyle="regularSquare" imagePosition="left" inset="2" id="fLa-H3-Ksz">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="layoutToggleAction:" target="Lh5-Bo-Ia5" id="OZx-19-Hvy"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6us-Ti-27b">
+                                <rect key="frame" x="476" y="229" width="76" height="32"/>
+                                <buttonCell key="cell" type="push" title="rotate" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6M5-tt-eYQ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="rotateAction:" target="Lh5-Bo-Ia5" id="lOv-x4-V1N"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="layoutToggleAction" destination="pA6-xo-2zf" id="5b3-hZ-dSE"/>
+                        <outlet property="viewVenue" destination="nqJ-l0-QZu" id="Pm1-J0-nIL"/>
+                    </connections>
+                </viewController>
+                <customObject id="0Kl-VD-Tcp" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="787.5" y="441"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="VenueManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="651" height="310"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView wantsLayer="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fpd-Rq-Bps">
+                                <rect key="frame" x="20" y="40" width="440" height="250"/>
+                                <clipView key="contentView" id="XxS-7k-Sev" customClass="FlippedClipView" customModule="VenueManager" customModuleProvider="target">
+                                    <rect key="frame" x="1" y="1" width="438" height="248"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Nf-Xm-oNH">
+                                            <rect key="frame" x="0.0" y="154" width="181" height="94"/>
+                                        </view>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="nUG-hb-NTY">
+                                    <rect key="frame" x="1" y="233" width="438" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="ipB-rN-IaA">
+                                    <rect key="frame" x="424" y="1" width="15" height="248"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <customView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZoP-ZQ-NZm">
+                                <rect key="frame" x="468" y="60" width="163" height="230"/>
+                                <subviews>
+                                    <box fixedFrame="YES" title="Selected Place" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="axE-zi-U0g">
+                                        <rect key="frame" x="-7" y="172" width="177" height="58"/>
+                                        <view key="contentView" id="jzF-mb-Ief">
+                                            <rect key="frame" x="1" y="1" width="175" height="42"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="thz-Mk-FKt">
+                                                    <rect key="frame" x="18" y="13" width="139" height="17"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="Ky9-mj-HP5">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                            </subviews>
+                                        </view>
+                                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </box>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o8Q-zh-hYR">
+                                        <rect key="frame" x="22" y="137" width="118" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Add to Event" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="N6z-rW-jt6">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="addToEventsAction:" target="XfG-lQ-9wD" id="BhY-b2-3MR"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mvp-AM-pxv">
+                                        <rect key="frame" x="26" y="98" width="108" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Category A" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ILi-cA-F6x">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="setPriceCategoryAction:" target="XfG-lQ-9wD" id="LIS-yQ-6Dy"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zn4-wp-OXI">
+                                        <rect key="frame" x="27" y="65" width="108" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Category B" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="c7Y-2Q-c3g">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="setPriceCategoryAction:" target="XfG-lQ-9wD" id="zgp-fI-39a"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3cy-cv-pUt">
+                                        <rect key="frame" x="27" y="32" width="109" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Category C" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="97r-D7-T5g">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="setPriceCategoryAction:" target="XfG-lQ-9wD" id="5sT-YL-icv"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DL9-X1-24m">
+                                        <rect key="frame" x="25" y="-1" width="109" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Category D" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="v28-xB-gnY">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="setPriceCategoryAction:" target="XfG-lQ-9wD" id="iVc-eP-hL7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="163" id="EhZ-N0-INm"/>
+                                </constraints>
+                            </customView>
+                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IXo-No-gt8">
+                                <rect key="frame" x="18" y="8" width="167" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="McF-He-zTM"/>
+                                    <constraint firstAttribute="width" constant="163" id="ZIe-4a-tUi"/>
+                                </constraints>
+                                <sliderCell key="cell" state="on" alignment="left" maxValue="2" doubleValue="0.5" tickMarkPosition="above" sliderType="linear" id="bbz-b7-0or"/>
+                                <connections>
+                                    <action selector="zoomAction:" target="XfG-lQ-9wD" id="25O-6F-gyi"/>
+                                </connections>
+                            </slider>
+                            <slider horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IvX-OE-qxO">
+                                <rect key="frame" x="195" y="2" width="28" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="AOo-t0-H8z"/>
+                                    <constraint firstAttribute="width" constant="24" id="Jn8-hU-Dmm"/>
+                                </constraints>
+                                <sliderCell key="cell" alignment="left" maxValue="360" allowsTickMarkValuesOnly="YES" sliderType="circular" id="eTL-NF-HTK"/>
+                                <connections>
+                                    <action selector="rotateAction:" target="XfG-lQ-9wD" id="azs-hM-Kgu"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Fpd-Rq-Bps" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="1aI-Of-VOF"/>
+                            <constraint firstAttribute="bottom" secondItem="Fpd-Rq-Bps" secondAttribute="bottom" constant="40" id="Aff-CR-bJO"/>
+                            <constraint firstItem="Fpd-Rq-Bps" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="GVy-0M-q4e"/>
+                            <constraint firstItem="ZoP-ZQ-NZm" firstAttribute="leading" secondItem="Fpd-Rq-Bps" secondAttribute="trailing" constant="8" id="N2N-LP-rJT"/>
+                            <constraint firstItem="IvX-OE-qxO" firstAttribute="leading" secondItem="IXo-No-gt8" secondAttribute="trailing" constant="14" id="OYK-Ar-22G"/>
+                            <constraint firstItem="ZoP-ZQ-NZm" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="aCA-vP-DhI"/>
+                            <constraint firstItem="IXo-No-gt8" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="d1u-9b-AfK"/>
+                            <constraint firstAttribute="bottom" secondItem="IXo-No-gt8" secondAttribute="bottom" constant="10" id="h0V-HC-9N3"/>
+                            <constraint firstAttribute="bottom" secondItem="IvX-OE-qxO" secondAttribute="bottom" constant="5" id="lfb-1a-wGn"/>
+                            <constraint firstAttribute="trailing" secondItem="ZoP-ZQ-NZm" secondAttribute="trailing" constant="20" id="raY-x4-cOn"/>
+                            <constraint firstAttribute="bottom" secondItem="ZoP-ZQ-NZm" secondAttribute="bottom" constant="20" id="sWt-s5-iaK"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonBest" destination="mvp-AM-pxv" id="TtT-y5-zA0"/>
+                        <outlet property="buttonGood" destination="Zn4-wp-OXI" id="plU-m3-DYb"/>
+                        <outlet property="buttonNotBad" destination="3cy-cv-pUt" id="EpS-EO-OpK"/>
+                        <outlet property="buttonPit" destination="ZoP-ZQ-NZm" id="WGb-3I-nX6"/>
+                        <outlet property="clipView" destination="XxS-7k-Sev" id="ZGK-hT-OLj"/>
+                        <outlet property="scrollView" destination="Fpd-Rq-Bps" id="pPf-HJ-csA"/>
+                        <outlet property="sliderZoom" destination="IXo-No-gt8" id="LRv-9G-rsb"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75.5" y="764"/>
         </scene>
     </scenes>
 </document>

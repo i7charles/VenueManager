@@ -13,6 +13,14 @@
 		1BF9F9521C2075510047D783 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9F9501C2075510047D783 /* Main.storyboard */; };
 		1BF9F95D1C2075510047D783 /* VenueManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF9F95C1C2075510047D783 /* VenueManagerTests.swift */; };
 		1BF9F9681C2075510047D783 /* VenueManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF9F9671C2075510047D783 /* VenueManagerUITests.swift */; };
+		1BF9F9781C20758A0047D783 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF9F9751C20758A0047D783 /* Place.swift */; };
+		1BF9F9791C20758A0047D783 /* HttpRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF9F9761C20758A0047D783 /* HttpRequestHandler.swift */; };
+		1BF9F97A1C20758A0047D783 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF9F9771C20758A0047D783 /* Location.swift */; };
+		1BF9F97E1C2075B90047D783 /* FlippedClipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF9F97D1C2075B90047D783 /* FlippedClipView.swift */; };
+		1BF9F9811C2078A10047D783 /* VenueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF9F9801C2078A10047D783 /* VenueView.swift */; };
+		1BF9F9831C21B7D60047D783 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF9F9821C21B7D60047D783 /* Event.swift */; };
+		1BF9F9851C21B8670047D783 /* PriceCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF9F9841C21B8670047D783 /* PriceCategory.swift */; };
+		1BF9F9871C21EE6D0047D783 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF9F9861C21EE6D0047D783 /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +53,14 @@
 		1BF9F9631C2075510047D783 /* VenueManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VenueManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BF9F9671C2075510047D783 /* VenueManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueManagerUITests.swift; sourceTree = "<group>"; };
 		1BF9F9691C2075510047D783 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BF9F9751C20758A0047D783 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		1BF9F9761C20758A0047D783 /* HttpRequestHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequestHandler.swift; sourceTree = "<group>"; };
+		1BF9F9771C20758A0047D783 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		1BF9F97D1C2075B90047D783 /* FlippedClipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlippedClipView.swift; sourceTree = "<group>"; };
+		1BF9F9801C2078A10047D783 /* VenueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueView.swift; sourceTree = "<group>"; };
+		1BF9F9821C21B7D60047D783 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		1BF9F9841C21B8670047D783 /* PriceCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceCategory.swift; sourceTree = "<group>"; };
+		1BF9F9861C21EE6D0047D783 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestViewController.swift; path = ../TestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,11 +111,16 @@
 		1BF9F9491C2075510047D783 /* VenueManager */ = {
 			isa = PBXGroup;
 			children = (
+				1BF9F97C1C2075A10047D783 /* Utilities */,
+				1BF9F97B1C2075920047D783 /* Models */,
 				1BF9F94A1C2075510047D783 /* AppDelegate.swift */,
 				1BF9F94C1C2075510047D783 /* ViewController.swift */,
+				1BF9F9861C21EE6D0047D783 /* TestViewController.swift */,
+				1BF9F97D1C2075B90047D783 /* FlippedClipView.swift */,
 				1BF9F94E1C2075510047D783 /* Assets.xcassets */,
 				1BF9F9501C2075510047D783 /* Main.storyboard */,
 				1BF9F9531C2075510047D783 /* Info.plist */,
+				1BF9F9801C2078A10047D783 /* VenueView.swift */,
 			);
 			path = VenueManager;
 			sourceTree = "<group>";
@@ -120,6 +141,25 @@
 				1BF9F9691C2075510047D783 /* Info.plist */,
 			);
 			path = VenueManagerUITests;
+			sourceTree = "<group>";
+		};
+		1BF9F97B1C2075920047D783 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1BF9F9751C20758A0047D783 /* Place.swift */,
+				1BF9F9771C20758A0047D783 /* Location.swift */,
+				1BF9F9821C21B7D60047D783 /* Event.swift */,
+				1BF9F9841C21B8670047D783 /* PriceCategory.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		1BF9F97C1C2075A10047D783 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				1BF9F9761C20758A0047D783 /* HttpRequestHandler.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,8 +292,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BF9F9871C21EE6D0047D783 /* TestViewController.swift in Sources */,
+				1BF9F9831C21B7D60047D783 /* Event.swift in Sources */,
+				1BF9F9781C20758A0047D783 /* Place.swift in Sources */,
 				1BF9F94D1C2075510047D783 /* ViewController.swift in Sources */,
+				1BF9F9851C21B8670047D783 /* PriceCategory.swift in Sources */,
+				1BF9F97A1C20758A0047D783 /* Location.swift in Sources */,
+				1BF9F9791C20758A0047D783 /* HttpRequestHandler.swift in Sources */,
 				1BF9F94B1C2075510047D783 /* AppDelegate.swift in Sources */,
+				1BF9F9811C2078A10047D783 /* VenueView.swift in Sources */,
+				1BF9F97E1C2075B90047D783 /* FlippedClipView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +523,7 @@
 				1BF9F96E1C2075510047D783 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1BF9F96F1C2075510047D783 /* Build configuration list for PBXNativeTarget "VenueManagerTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +532,7 @@
 				1BF9F9711C2075510047D783 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1BF9F9721C2075510047D783 /* Build configuration list for PBXNativeTarget "VenueManagerUITests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +541,7 @@
 				1BF9F9741C2075510047D783 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
